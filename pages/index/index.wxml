@@ -1,0 +1,62 @@
+<view class="top">
+  <p class="{{selected==0?'selected':''}}" bindtap='onTabSelect' data-index="0">视频去水印</p>
+  <p class="{{selected==1?'selected':''}}" bindtap='onTabSelect' data-index="1">图片去水印</p>
+</view>
+
+<view class="page-body">
+  <view class="top-title">
+    <text>去水印永久免费！！！\n支持多个平台，不限次数使用</text>
+  </view>
+  <view class="container-top">
+    <view class="left">请输入视频地址</view>
+    <view bindtap="pasteUrl" class="pasteUrl">粘贴链接</view>
+  </view>
+  <view class="watermark">
+    <view class="watermark-input">
+      <input value="{{shareUrl}}" placeholder="请复制分享链接，粘贴到这里" bindinput="onInputChange" clearable="{{clear}}" />
+      <image wx:if="{{clear}}" src="../../images/clear.png" bindtap="clearInput" />
+    </view>
+  </view>
+
+  <view wx:if="{{selected==1}}">
+    <view class="btn-area" id="buttonContainer">
+      <button bindtap="submit" class="parsing">
+        点击图片解析
+      </button>
+    </view>
+  </view>
+
+  <view wx:if="{{selected==0}}">
+    <view class="button-top" id="buttonContainer">
+      <button bindtap="submit" class="parsing">
+        点击视频解析
+      </button>
+    </view>
+  </view>
+
+  <view class="banner-ad-area">
+    <ad unit-id="adunit-d92ffc31b6aa6ae4" ad-type="video" ad-theme="white" style="position:relative;z-index:1"></ad>
+  </view>
+
+  <view class="container-top">
+    <view class="bottom-tip-left">
+      <image src="../../images/new.webp" style="width: 42rpx; height: 42rpx; text-align: center;margin-top: 5rpx; margin-left: 50rpx; margin-right: 10rpx;"></image>
+      <text>常见问题</text>
+    </view>
+    <view class="bottom-tip-right" bindtap="goParse">
+      <image src="../../images/record.webp" style="width: 42rpx; height: 42rpx; text-align: center;margin-top: 5rpx; margin-left: 50rpx; margin-right: 10rpx;"></image>
+      <text>历史记录</text>
+    </view>
+  </view>
+
+  <view class="container-top">
+    <button class="bottom-share" open-type="share">
+      <image src="../../images/share.webp" style="width: 42rpx; height: 42rpx; text-align: center;margin-top: 5rpx; margin-left: 50rpx; margin-right: 10rpx;"></image>
+      <text open-type="share">分享给好友</text>
+    </button>
+  </view>
+
+  <view class="banner-ad-area">
+    <ad unit-id="adunit-d92ffc31b6aa6ae4" ad-type="video" ad-theme="white" style="position:relative;z-index:1"></ad>
+  </view>
+</view>
